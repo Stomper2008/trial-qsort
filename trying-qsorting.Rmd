@@ -1,17 +1,156 @@
 ---
-title: "Trial q sorts"
-output: html_notebook
+title: "Q-sort methodology proof of concept for Tom Lang"
+output:
+  html_document:
+    df_print: paged
 ---
+
+by Martin Brown, Martin.Brown@state.or.us, +1 503-229-5502
+
+## Introduction
+
+This R markdown notebook is a demonstration that a ["qsort" analysis](https://en.wikipedia.org/wiki/Q_methodology) is technically feasible here at Oregon DEQ.  DEQ's Tom Lang is interested in using q sorts to understand attitudes towards waste management and materials management in western Oregon counties.
+
+I will try to:
+
+* import some qsort field data which Tom Lang has entered via [PQMethod](http://schmolck.org/qmethod/) software
+* utilize that data in a pre-programmed q sort, performed by the R package [qmethod](https://journal.r-project.org/archive/2014-2/zabala.pdf)
+* display standard output (plots and data tables) produced by the q sort method.
+* alter some of the standard output for better comprehension (e.g. by adding full statement labels)
+
+In this session I will not attempt to understand or interpret the content of the q sorts.
+
+## Setting up workspace
+
+Loading required R packages...
 
 ```{r}
 library(tidyverse)
-library(qsort)
+library(qmethod)
+library(knitr)
+library(rmarkdown)
+#library(plotly)
 ```
 
-getting some sample data.
+## Importing sample data
 
 ```{r}
-my_scores <- 
-  {ex_qsort["aqs"] %>%
-  as.data.frame()}[1:11]
+# here is the score data itself
+my_better_scores <-
+  import.pqmethod(
+    file="source_data/Tillamoo.dat"
+  )
+
+# might be useful to save out the short statement names
+# provided by PQMethod (e.g. "sta_1") as a vector.
+# They're kinda mysterious but might be useful.
+short_statement_names <- row.names(my_better_scores)
+
+# here is the full text of each statement, as a 1-field
+# data frame
+my_better_statements <-
+  read.delim(
+    file="source_data/Tillamoo.sta",
+    header=FALSE,
+    col.names = c("long_statement")
+    )
+
+# here is a data frame that combines the long and short 
+# statement names and can be used for checking if necessary
+my_scores_and_statements <-
+  bind_cols(
+    data.frame(short_statement=short_statement_names),
+    my_better_statements,
+    my_better_scores
+  )
+
+# here i write out that "checking" data frame into 
+# a spreadsheet file for easier use by non-programmers
+write.csv(
+  my_scores_and_statements,
+  "intermediate_output/field_data_reexported_for_checking.csv",
+  row.names = FALSE
+)
+
+# here is a simple data frame that relates the short and 
+# long statement names
+my_statement_key <-
+  my_scores_and_statements %>% select(short_statement, long_statement)
+  
+# removing a few unnecessary objects
+rm(my_better_statements, my_scores_and_statements)
 ```
+## The imported data
+
+```{r}
+print(my_better_scores)
+print(my_statement_key)
+```
+
+## Running an analysis
+
+For simplicity I will run this asking for only 2 factors.
+
+```{r}
+my_analysis <-
+  qmethod(dataset=my_better_scores, nfactors = 2)
+```
+
+## Standard outputs
+
+At this point the R object "my_analysis" is storing the results.  R can output this in various ways.
+
+A summary statement...
+
+```{r}
+summary(my_analysis)
+```
+
+A standard plot..
+
+```{r fig.height=10, fig.width=6.5}
+plot(my_analysis)
+```
+
+A standard printout... (may be long)
+```{r}
+print(my_analysis)
+```
+
+## Some attempt at customizing output
+
+Here I will draw out the z-scores for each factor, label them with the long statement names.
+```{r, fig.height=10, fig.width=6.5}
+my_own_plot_data <-
+  my_analysis$zsc 
+short_statement <- row.names(my_own_plot_data)
+my_own_plot_data_2 <-
+  bind_cols(
+    data.frame(short_statement=short_statement), 
+    my_own_plot_data
+  )
+my_own_plot_data_3 <-
+  full_join(
+    my_own_plot_data_2,
+    my_statement_key,
+    by="short_statement"
+  )
+my_own_plot_data_4 <-
+  pivot_longer(
+    data=my_own_plot_data_3,
+    names_to = "factor",
+    values_to = "z_score",
+    zsc_f1:zsc_f2
+  )
+ggplot()+
+  ggtitle("Alternate z score chart with custom labels")+
+  geom_point(
+    data=my_own_plot_data_4,
+    aes(y=z_score, x=long_statement, color=factor, shape=factor)
+  )+
+  theme(
+    axis.text.x=element_text(size=5, angle=90, hjust=1, vjust=0.5)
+  )
+```
+
+Ok, I think I've shown we can produce output.  Now, to make it mean something is the next task.
