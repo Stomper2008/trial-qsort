@@ -30,6 +30,7 @@ library(qmethod)
 library(knitr)
 library(rmarkdown)
 library(kableExtra)
+library(sjPlot)
 #library(plotly)
 ```
 
@@ -84,8 +85,8 @@ rm(my_better_statements, my_scores_and_statements)
 ## The imported data
 
 ```{r}
-kable(my_better_scores)
-kable(my_statement_key)
+tab_df(my_better_scores)
+tab_df(my_statement_key)
 ```
 
 ## Running an analysis

@@ -219,6 +219,9 @@ library(kableExtra)</code></pre>
 <pre><code>## The following object is masked from 'package:dplyr':
 ## 
 ##     group_rows</code></pre>
+<pre class="r"><code>library(sjPlot)</code></pre>
+<pre><code>## Warning: package 'sjPlot' was built under R version 3.6.2</code></pre>
+<pre><code>## #refugeeswelcome</code></pre>
 <pre class="r"><code>#library(plotly)</code></pre>
 </div>
 <div id="importing-sample-data" class="section level2">
@@ -276,1787 +279,1693 @@ rm(my_better_statements, my_scores_and_statements)</code></pre>
 </div>
 <div id="the-imported-data" class="section level2">
 <h2>The imported data</h2>
-<pre class="r"><code>kable(my_better_scores)</code></pre>
-<table>
-<thead>
+<pre class="r"><code>tab_df(my_better_scores)</code></pre>
+<table style="border-collapse:collapse; border:none;">
 <tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; text-align:left; ">
 1A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; ">
 2A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; ">
 3A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; ">
 4A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; ">
 5A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; ">
 6A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; col7">
 7A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; col8">
 8A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; col9">
 9A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; 0">
 10A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; 1">
 11A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; 2">
 12A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; 3">
 13A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; 4">
 14A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; 5">
 15A
 </th>
-<th style="text-align:right;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; 6">
 16A
 </th>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td style="text-align:left;">
-sta_1
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_2
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_3
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_4
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_5
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 3
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_6
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -3
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_7
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 0
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_8
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -4
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_9
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 4
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_10
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -4
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_11
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 0
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_12
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 2
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_13
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -2
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_14
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -2
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_15
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 2
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_16
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_17
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -2
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_18
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 2
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_19
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_20
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_21
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_22
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 4
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_23
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 3
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_24
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -3
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_25
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 -3
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_26
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 -3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 0
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_27
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col7">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col8">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; col9">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 0">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 1">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 2">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 3">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 4">
 2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 5">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; 6">
 0
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-sta_28
-</td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; border-bottom: double; ">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 -4
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; col7">
 0
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; col8">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; col9">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; 0">
 3
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; 1">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; 2">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; 3">
 1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; 4">
 -1
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; 5">
 -2
 </td>
-<td style="text-align:right;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; 6">
 3
 </td>
 </tr>
-</tbody>
 </table>
-<pre class="r"><code>kable(my_statement_key)</code></pre>
-<table>
-<thead>
+<pre class="r"><code>tab_df(my_statement_key)</code></pre>
+<table style="border-collapse:collapse; border:none;">
 <tr>
-<th style="text-align:left;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; text-align:left; ">
 short_statement
 </th>
-<th style="text-align:left;">
+<th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; ">
 long_statement
 </th>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_1
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Paper Recycling
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_2
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Plastic Recycling
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_3
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Metal Recycling
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_4
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Glass Recycling
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_5
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Extended Producer Responsibility Programs (i.e. PaintCare and E-Cycles)
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_6
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Residential Curbside Recycling Service
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_7
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Education programs to reduce contamination in the recycling stream
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_8
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Residential Collection Service of Organics (yard debris &amp; food scraps)
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_9
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Commercial Recycling Services (industry, retailers, institutions)
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_10
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Commercial Food Scraps Collection ( industry, retailers, institutions)
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_11
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Community programs which promote education and volunteerism in recycling efforts (i.e. Master Recyclers)
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_12
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Proper Disposal of Household Hazardous Waste
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_13
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Proper Disposal of Pharmaceutical Waste
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_14
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Prevention and Enforcement of Illegal Dumping
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_15
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Proper Disposal of Asbestos
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_16
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Disaster Debris Planning &amp; Management
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_17
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Proper Disposal of Sharps and Infectious Waste
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_18
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Residential Collection of Solid Waste
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_19
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Transfer Station Capacity
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_20
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Commercial &amp; Industrial Collection of Solid Waste
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_21
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Proper Disposal of Bulky Waste
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_22
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Industry standards which minimize the use of toxic chemicals in consumer products and packaging
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_23
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Government procurement plans which prioritize products and services with low impacts to human health and the environmental
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_24
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Reuse and repair programs which extend the lifespan of materials
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_25
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Education for households and businesses which prevent the wasting of food
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_26
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 K-12 education curriculums on waste prevention and resource conservation
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
 sta_27
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 Consumer education programs to reduce the use and spread of toxic chemicals
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; border-bottom: double; ">
 sta_28
 </td>
-<td style="text-align:left;">
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 Strategies to increase the salvage of non-hazardous building materials for reuse
 </td>
 </tr>
-</tbody>
 </table>
 </div>
 <div id="running-an-analysis" class="section level2">
@@ -2065,7 +1974,7 @@ Strategies to increase the salvage of non-hazardous building materials for reuse
 <pre class="r"><code>my_analysis &lt;-
   qmethod(dataset=my_better_scores, nfactors = 2)</code></pre>
 <pre><code>## Q-method analysis.
-## Finished on:             Mon Jan 27 16:37:27 2020
+## Finished on:             Mon Jan 27 16:54:16 2020
 ## Original data:           28 statements, 16 Q-sorts
 ## Forced distribution:     TRUE
 ## Number of factors:       2
@@ -2079,7 +1988,7 @@ Strategies to increase the salvage of non-hazardous building materials for reuse
 <p>A summary statement…</p>
 <pre class="r"><code>summary(my_analysis)</code></pre>
 <pre><code>## Q-method analysis.
-## Finished on:             Mon Jan 27 16:37:27 2020
+## Finished on:             Mon Jan 27 16:54:16 2020
 ## Original data:           28 statements, 16 Q-sorts
 ## Forced distribution:     TRUE
 ## Number of factors:       2
@@ -2130,7 +2039,7 @@ Strategies to increase the salvage of non-hazardous building materials for reuse
 <p>A standard printout… (may be long)</p>
 <pre class="r"><code>print(my_analysis)</code></pre>
 <pre><code>## Q-method analysis.
-## Finished on:             Mon Jan 27 16:37:27 2020
+## Finished on:             Mon Jan 27 16:54:16 2020
 ## Original data:           28 statements, 16 Q-sorts
 ## Forced distribution:     TRUE
 ## Number of factors:       2
