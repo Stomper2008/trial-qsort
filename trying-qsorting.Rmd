@@ -29,6 +29,7 @@ library(tidyverse)
 library(qmethod)
 library(knitr)
 library(rmarkdown)
+library(kableExtra)
 #library(plotly)
 ```
 
@@ -38,7 +39,7 @@ library(rmarkdown)
 # here is the score data itself
 my_better_scores <-
   import.pqmethod(
-    file="source_data/Tillamoo.dat"
+    file="source_data/Sort_2_T.dat"
   )
 
 # might be useful to save out the short statement names
@@ -50,7 +51,7 @@ short_statement_names <- row.names(my_better_scores)
 # data frame
 my_better_statements <-
   read.delim(
-    file="source_data/Tillamoo.sta",
+    file="source_data/Sort_2_T.sta",
     header=FALSE,
     col.names = c("long_statement")
     )
@@ -83,8 +84,8 @@ rm(my_better_statements, my_scores_and_statements)
 ## The imported data
 
 ```{r}
-print(my_better_scores)
-print(my_statement_key)
+kable(my_better_scores)
+kable(my_statement_key)
 ```
 
 ## Running an analysis
