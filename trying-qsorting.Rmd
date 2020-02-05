@@ -38,56 +38,93 @@ library(sjPlot)
 
 ```{r}
 # here is the score data itself
-my_better_scores <-
+my_better_scores_1 <-
+  import.pqmethod(
+    file ="source_data/Tillamoo.dat"
+  ) 
+short_statement_names_1 <- row.names(my_better_scores_1)
+my_better_scores_1a <-
+  data.frame(my_better_scores_1, sta=short_statement_names_1)
+my_better_scores_2 <-
   import.pqmethod(
     file="source_data/Sort_2_T.dat"
-  )
+  ) 
+short_statement_names_2 <- row.names(my_better_scores_2)
+my_better_scores_2a <-
+  data.frame(my_better_scores_2, sta=short_statement_names_2)
 
-# might be useful to save out the short statement names
-# provided by PQMethod (e.g. "sta_1") as a vector.
-# They're kinda mysterious but might be useful.
-short_statement_names <- row.names(my_better_scores)
+my_better_scores <-
+  bind_rows(
+    my_better_scores_1a %>% mutate(timeFrame="immediate"), 
+    my_better_scores_2a %>% mutate(timeFrame="future")
+    ) %>%
+  select(-X16A)
 
 # here is the full text of each statement, as a 1-field
 # data frame
-my_better_statements <-
+my_better_statements_1 <-
+  read.delim(
+    file="source_data/Tillamoo.sta",
+    header=FALSE,
+    col.names = c("long_statement")
+    )
+
+my_better_statements_2 <-
   read.delim(
     file="source_data/Sort_2_T.sta",
     header=FALSE,
     col.names = c("long_statement")
     )
 
-# here is a data frame that combines the long and short 
-# statement names and can be used for checking if necessary
-my_scores_and_statements <-
+my_better_statements <- 
+  bind_rows(my_better_statements_1, my_better_statements_2) %>%
+  unique()
+
+my_statement_key =
   bind_cols(
-    data.frame(short_statement=short_statement_names),
-    my_better_statements,
-    my_better_scores
+    select(my_better_scores_1a, sta),
+    my_better_statements
   )
 
-# here i write out that "checking" data frame into 
-# a spreadsheet file for easier use by non-programmers
-write.csv(
-  my_scores_and_statements,
-  "intermediate_output/field_data_reexported_for_checking.csv",
-  row.names = FALSE
-)
+my_data <-
+  bind_cols(
+    my_better_scores,
+    data.frame(
+      shortSta=c(short_statement_names_1,short_statement_names_2)
+    )
+  )
 
-# here is a simple data frame that relates the short and 
-# long statement names
-my_statement_key <-
-  my_scores_and_statements %>% select(short_statement, long_statement)
-  
-# removing a few unnecessary objects
-rm(my_better_statements, my_scores_and_statements)
+my_data_long <-
+  pivot_longer(
+    my_data,
+    names_to = "respondent",
+    values_to = "score",
+    X1A:X15A
+  )
 ```
-## The imported data
+
+## Scores for each statement
 
 ```{r}
-tab_df(my_better_scores)
-tab_df(my_statement_key)
+my_descriptives <-
+  my_data_long %>%
+  group_by(timeFrame, shortSta) %>%
+  summarise(
+    min=min(score),
+    med=median(score),
+    max=max(score),
+    mean=mean(score),
+    sd=sd(score)
+  ) %>% ungroup()
+
+my_descriptives_2 <-
+  left_join(
+    my_descriptives,
+    my_statement_key,
+    by = c("shortSta"="sta")
+  )
 ```
+
 
 ## Running an analysis
 
@@ -95,7 +132,7 @@ For simplicity I will run this asking for only 2 factors.
 
 ```{r}
 my_analysis <-
-  qmethod(dataset=my_better_scores, nfactors = 2)
+  qmethod(dataset=my_better_scores_1, nfactors=5, rotation = "cluster")
 ```
 
 ## Standard outputs
@@ -116,7 +153,7 @@ plot(my_analysis)
 
 A standard printout... (may be long)
 ```{r}
-print(my_analysis)
+print(my_analysis, length=28)
 ```
 
 ## Some attempt at customizing output
